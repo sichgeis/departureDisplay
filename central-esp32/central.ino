@@ -1,3 +1,4 @@
+#include "config.private.h"
 #include <ArduinoJson.h>
 #include <WiFiClientSecure.h>
 #include "RTClib.h"
@@ -7,15 +8,15 @@
 #include <BLE2902.h>
 
 // constants
-const char *SSID PROGMEM = "[removed]";
-const char *PASSWORD PROGMEM = "[removed]";
+const char *SSID PROGMEM = DEPARTURE_WIFI_SSID;
+const char *PASSWORD PROGMEM = DEPARTURE_WIFI_PASSWORD;
 const char *HOST PROGMEM = "www.mvg.de";
 const char *URL PROGMEM = "fahrinfo/api/departure/634?footway=0";
-const char *API_KEY PROGMEM = "[removed]";
+const char *API_KEY PROGMEM = DEPARTURE_TRANSIT_API_KEY;
 const char *SERVICE_UUID PROGMEM = "2e80f571-d90f-4a75-818b-e90434e5ffaa";
 const char *DISPLAY_TEXT_UUID PROGMEM = "c623addf-a88a-4d26-b78e-15baf8195cdd";
 const char *BLE_DEVICE_NAME PROGMEM = "departures central";
-const char *PERIPHERAL_ADDRESS PROGMEM = "00:00:00:00:00:00";
+const char *PERIPHERAL_ADDRESS PROGMEM = DEPARTURE_PERIPHERAL_ADDRESS;
 const size_t CAPACITY PROGMEM =
     JSON_ARRAY_SIZE(4) 
     + JSON_ARRAY_SIZE(18) 

@@ -3,7 +3,10 @@ var noble = require('noble');
 var uartServiceUuid = '6E400001-B5A3-F393-E0A9-E50E24DCCA9E';
 var uartCharacteristicRxUuid = '6E400002-B5A3-F393-E0A9-E50E24DCCA9E';
 var uartCharacteristicRxUuid = '6E400003-B5A3-F393-E0A9-E50E24DCCA9E';
-var peripheralAddress = '00:00:00:00:00:00';
+var peripheralAddress = process.env.DEPARTURE_PERIPHERAL_ADDRESS;
+if (!peripheralAddress) {
+  throw new Error('Set DEPARTURE_PERIPHERAL_ADDRESS to your BLE peripheral address');
+}
 
 var uartClientService = null;
 var displayTextCharacteristic = null;

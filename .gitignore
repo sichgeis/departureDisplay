@@ -1,1 +1,9 @@
 build/**
+# Local configuration and generated dependency/IDE files
+**/config.private.h
+.env
+.env.*
+node_modules/
+.vscode/
+*.pem
+*.key
